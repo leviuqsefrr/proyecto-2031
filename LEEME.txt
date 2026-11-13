@@ -1,28 +1,23 @@
-PROYECTO 2031 v0.1 — APP INDEPENDIENTE
+PROYECTO 2031 – VERSIÓN 0.3 (13 NOV 2026)
 
-FUNCIONA:
-- Agenda por fecha, hora y categoría; actividades completadas.
-- Metas 2026–2031 con porcentaje de avance.
-- Proyectos personales y profesionales.
-- Registro básico de clientes de FG Soluciones con búsqueda.
-- Respaldo JSON y restauración con confirmación.
-- Instalación como PWA y apertura sin conexión luego de visitar el sitio HTTPS.
-- Datos guardados localmente EN CADA DISPOSITIVO (localStorage).
+Incluye:
+- Agenda mensual y horarios con inicio/fin, reprogramación y categorías.
+- Plantillas sugeridas 2032/2036 añadidas solo con autorización, sin borrar metas anteriores.
+- Metas y pasos con horizontes de 5 años (2031), 6 años (2032) y 10 años (2036).
+- Recordatorios VISIBLES SOLO CON LA APP ABIERTA, no alarmas en segundo plano.
+- Exportación manual de eventos del día a archivo .ics para importar al calendario nativo. La importación y el comportamiento de avisos dependen de iOS.
+- Copiar resumen a ChatGPT para pedir propuestas (no sincroniza ni autoriza edición remota).
+- Guarda localmente con la MISMA clave proyecto2031:data:v1 y acepta respaldos anteriores.
+- Funciona sin conexión después de la primera carga HTTPS y el registro del Service Worker, sujeto a almacenamiento del sistema.
 
-TODAVÍA NO FUNCIONA:
-- Sincronización entre iPhone y PC; acceso directo del asistente; alertas push; integración FG Cotizaciones; autenticación; cotizaciones reales.
-- Abrir index.html directamente desde Archivos de iPhone no instala la PWA; requiere publicar estos archivos en HTTPS.
-- La caché offline guarda la aplicación, NO sustituye respaldos de datos.
+ACTUALIZAR GITHUB PAGES:
+1) ANTES de actualizar, en la app instalada: Ajustes -> Descargar respaldo y guardarlo en Archivos/iCloud.
+2) Sube la carpeta icons (contenido completo) a la ruta icons/ en GitHub; es obligatoria para completar la caché offline.
+3) Sube y reemplaza index.html, app.js, styles.css, sw.js, manifest.webmanifest y LEEME.txt en la raíz del mismo repo.
+4) Espera que Pages publique; abre sitio en Safari con internet y vuelve a abrir la app instalada.
+5) Confirma versión 0.3 en Ajustes; prueba guardado y modo avión SIN borrar datos.
 
-INSTALACIÓN EN IPHONE CON GITHUB PAGES:
-1. Desde tu cuenta de GitHub crea un repositorio nuevo (por ejemplo proyecto-2031). IMPORTANTE: para la prueba solo contiene código, no datos de clientes.
-2. Sube los archivos y la carpeta icons/ respetando rutas; asegúrate de subir index.html a la raíz.
-3. Abre Settings > Pages > Build and deployment > Deploy from a branch, selecciona main y /(root), y guarda.
-4. Abre la dirección HTTPS que GitHub Pages muestra en Safari del iPhone.
-5. Safari: Compartir > Añadir a pantalla de inicio > Añadir.
-6. Abre la app una vez con internet; luego puedes usar la interfaz offline.
-7. Guarda periódicamente un respaldo desde Ajustes > Descargar respaldo; conserva el JSON en Archivos/iCloud.
-
-PRIVACIDAD: GitHub Pages publica el CÓDIGO en internet. Los registros se guardan solo en el navegador/dispositivo local y NO se suben a GitHub. No pegues información real de clientes en archivos del repositorio. Si borras datos del sitio Safari o cambias de dispositivo, necesitarás importar un respaldo. No hay cifrado de datos en almacenamiento local.
-
-No modificar ni sobrescribir C:\Users\xpect\Documents\fg-cotizaciones ni Zora.
+LIMITACIONES IMPORTANTES:
+No hay sincronización nube, integración directa con ChatGPT, push en segundo plano ni garantía de alarmas con app cerrada.
+No subir respaldos ni datos privados al repositorio público.
+Nunca borrar el repositorio viejo ni los datos; conservar respaldo antes de actualizar.
